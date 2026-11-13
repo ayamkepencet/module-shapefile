@@ -66,6 +66,11 @@
     "test": "node --test test/*.unit.ts"
   },
   "devDependencies": {
-    "@tablette/module-sdk": "^0.1.0"
+    "@tablette/module-sdk": "^0.1.0",
+    "@types/react": "^19.2.0",
+    "ai": "^5.0.253",
+    "react": "^19.2.0",
+    "typescript": "^5.7.0",
+    "zod": "^3.25.0"
   }
 }
