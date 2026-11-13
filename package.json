@@ -1,0 +1,71 @@
+{
+  "name": "@tablette/module-shapefile",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Studio module: draw shapes (markers, circles, rectangles, polygons, polylines, GeoJSON) on the OpenStreetMap Leaflet viewer.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://git.bimr.net/rvba/tablette-modules.git",
+    "directory": "packages/module-shapefile"
+  },
+  "private": false,
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "CHANGELOG.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./module": {
+      "types": "./dist/module.d.ts",
+      "default": "./dist/module.js"
+    },
+    "./prompts": {
+      "types": "./dist/prompts.d.ts",
+      "default": "./dist/prompts.js"
+    },
+    "./render": {
+      "types": "./dist/render.d.ts",
+      "default": "./dist/render.js"
+    },
+    "./shapes": {
+      "types": "./dist/shapes.d.ts",
+      "default": "./dist/shapes.js"
+    },
+    "./tools": {
+      "types": "./dist/tools.d.ts",
+      "default": "./dist/tools.js"
+    },
+    "./types": {
+      "types": "./dist/types.d.ts",
+      "default": "./dist/types.js"
+    }
+  },
+  "studioModule": {
+    "id": "shapefile",
+    "entry": "./dist/index.js",
+    "export": "shapefileModule"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://git.bimr.net/api/packages/rvba/npm/"
+  },
+  "peerDependencies": {
+    "@tablette/module-sdk": "^0.1.0",
+    "ai": "^5.0.253",
+    "react": "^19.2.0",
+    "zod": "^3.25.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "prepack": "npm run build",
+    "test": "node --test test/*.unit.ts"
+  },
+  "devDependencies": {
+    "@tablette/module-sdk": "^0.1.0"
+  }
+}
